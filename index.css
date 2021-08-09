@@ -1,41 +1,185 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
-:root {
-    --white: hsl(0, 0, 100%);
-    --t1-bg-main: hsl(222, 26%, 31%);
-    --t1-bg-keypad: hsl(223, 31%, 20%);
-    --t1-bg-screen: hsl(224, 36%, 15%);
-    --t1-key1: hsl(225, 21%, 49%);
-    --t1-key1-shadow: hsl(224, 28%, 35%);
-    --t1-key2: hsl(6, 63%, 50%);
-    --t1-key2-shadow: hsl(6, 70%, 34%);
-    --t1-key3: hsl(30, 25%, 89%);
-    --t1-key3-shadow: hsl(28, 16%, 65%);
-    --t1-text-blue: hsl(221, 14%, 31%);
+.theme-one {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+    --key1: hsl(225, 21%, 49%);
+    --key1-shadow: hsl(224, 28%, 35%);
+    --key2: hsl(6, 63%, 50%);
+    --key2-shadow: hsl(6, 70%, 34%);
+    --key3: hsl(30, 25%, 89%);
+    --key3-shadow: hsl(28, 16%, 65%);
+    --text: hsl(221, 14%, 31%);
+    --text-2: #fff;
+    --white: #fff;
+    --display: #fff;
+    --hor-pos: 6px;
+}
 
-    --t2-bg-main: hsl(0, 0%, 90%);
-    --t2-bg-keypad: hsl(0, 5%, 81%);
-    --t2-bg-screen: hsl(0, 0%, 93%);
-    --t2-key1: hsl(185, 42%, 37%);
-    --t2-key1-shadow: hsl(185, 58%, 25%);
-    --t2-key2: hsl(25, 98%, 40%);
-    --t2-key2-shadow: hsl(25, 99%, 27%);
-    --t2-key3: hsl(45, 7%, 89%);
-    --t2-key3-shadow: hsl(35, 11%, 61%);
-    --t2-text-dark-yellow: hsl(60, 10%, 19%);
+.theme-two {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+    --key1: hsl(185, 42%, 37%);
+    --key1-shadow: hsl(185, 58%, 25%);
+    --key2: hsl(25, 98%, 40%);
+    --key2-shadow: hsl(25, 99%, 27%);
+    --key3: hsl(45, 7%, 89%);
+    --key3-shadow: hsl(35, 11%, 61%);
+    --text: hsl(60, 10%, 19%);
+    --text-2: #fff;
+    --white: #fff;
+    --display: hsl(60, 10%, 19%);
+    --hor-pos: 27px;
+}
 
-    --t3-bg-main: hsl(268, 75%, 9%);
-    --t3-bg-rest: hsl(268, 71%, 12%);
-    --t3-key1: hsl(281, 89%, 26%);
-    --t3-key1-shadow: hsl(285, 91%, 52%);
-    --t3-key2: hsl(176, 100%, 44%);
-    --t3-key2-shadow: hsl(177, 92%, 70%);
-    --t3-key3: hsl(268, 47%, 21%);
-    --t3-key3-shadow: hsl(290, 70%, 36%);
-    --t3-text-light-yellow: hsl(52, 100%, 62%);
-    --t3-text-dark-blue: hsl(198, 20%, 13%);
+.theme-three {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+    --key1: hsl(281, 89%, 26%);
+    --key1-shadow: hsl(285, 91%, 52%);
+    --key2: hsl(176, 100%, 44%);
+    --key2-shadow: hsl(177, 92%, 70%);
+    --key3: hsl(268, 47%, 21%);
+    --key3-shadow: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --text-2: hsl(198, 20%, 13%);
+    --white: #fff;
+    --display: #fff;
+    --hor-pos: 50px;
+}
 
+html, body {
+    margin: 0;
+    padding: 0;
     font-size: 32px;
     font-family: 'Spartan', sans-serif;
     font-weight: 700;
+    background-color: var(--bg-main);
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    background-color: var(--bg-main);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 7vw;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: .4rem;
+    align-items: center;
+    color: var(--display);
+}
+
+.logo {
+    font-size: 1rem;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.theme-switch {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+
+.labels {
+    display: flex;
+    width: 50px;
+    padding: 0 8px;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    background-color: var(--bg-screen);
+    height: 18px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.switch:hover {
+    cursor: pointer;
+}
+
+.indicator {
+    position: absolute;
+    top: 4px;
+    left: var(--hor-pos);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--key2);
+}
+
+.screen {
+    background-color: var(--bg-screen);
+    text-align: right;
+    width: 100%;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+.display {
+    color: var(--display);
+    padding: .5rem;
+}
+
+.keypad {
+    background-color: var(--bg-keypad);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: .5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.large-btn {
+    grid-column: span 2;
+}
+
+.keys p {
+    padding: .25rem .5rem;
+    border-radius: 5px;
+}
+
+.key-1,
+.key-2 {
+    font-size: .5rem;
+}
+
+.key-1 {
+    background-color: var(--key1);
+    box-shadow: 0px 3px 0px var(--key1-shadow);
+    color: var(--white);
+}
+.key-2 {
+    background-color: var(--key2);
+    box-shadow: 0px 3px 0px var(--key2-shadow);
+    color: var(--text-2);
+    
+}
+.key-3 {
+    background-color: var(--key3);
+    box-shadow: 0px 3px 0px var(--key3-shadow);
+    color: var(--text);
 }

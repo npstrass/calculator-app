@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
   
   <title>Frontend Mentor | Calculator app</title>
 
@@ -14,13 +15,74 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class='theme-three'>
+  <div class="container">
+    <div class="header">
+      <p class='logo'>calc</p>
+      <div class="theme-switch-wrapper">
+        <p>THEME</p>
+        <div class="theme-switch">
+          <div class="labels">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <div class="switch">
+            <div class="indicator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen">
+      <p class='display'>0</p>
+    </div>
+    <div class="keypad">
+      <div class="keys">
+        <p id='number' class='key-3'>7</p>
+        <p id='number' class='key-3'>8</p>
+        <p id='number' class='key-3'>9</p>
+        <p id='delete' class='key-1'>DEL</p>
+        <p id='number' class='key-3'>4</p>
+        <p id='number' class='key-3'>5</p>
+        <p id='number' class='key-3'>6</p>
+        <p id='operation' class='key-3'>+</p>
+        <p id='number' class='key-3'>1</p>
+        <p id='number' class='key-3'>2</p>
+        <p id='number' class='key-3'>3</p>
+        <p id='minus' class='key-3'>-</p>
+        <p id='number' class='key-3'>.</p>
+        <p id='number' class='key-3'>0</p>
+        <p id='operation' class='key-3'>/</p>
+        <p id='operation' class='key-3'>x</p>
+        <p id='clear' class='large-btn key-1'>RESET</p>
+        <p id='equals' class='large-btn key-2'>=</p>
+      </div>
+    </div>
 
+  </div>
 
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Noah Strasser</a>.
   </div>
+  <script>
+    const toggle = document.querySelector('.switch')
+    const body = document.body
+
+    toggle.addEventListener('click', () => {
+      if (body.classList.contains('theme-one')) {
+        body.classList.remove('theme-one')
+        body.classList.add('theme-two')
+      } else if (body.classList.contains('theme-two')) {
+        body.classList.remove('theme-two')
+        body.classList.add('theme-three')
+      } else if (body.classList.contains('theme-three')) {
+        body.classList.remove('theme-three')
+        body.classList.add('theme-one')
+      }
+    })
+  </script>
+  <script src="index.js"></script>
 </body>
 </html>
